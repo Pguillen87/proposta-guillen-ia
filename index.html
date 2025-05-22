@@ -13,19 +13,65 @@
                         inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#10B981', // Um verde vibrante para destaque
-                        secondary: '#3B82F6', // Um azul para acentuação
-                        dark: '#1F2937', // Cor escura para texto principal
-                        light: '#F9FAFB', // Cor clara para fundos
+                        primary: '#10B981', // Um verde vibrante para destaque (mantido para elementos específicos)
+                        secondary: '#3B82F6', // Um azul para acentuação (mantido para elementos específicos)
+                        dark: '#1F2937', // Cor escura para texto principal (ajustado para #f3f3f3)
+                        light: '#F9FAFB', // Cor clara para fundos (ajustado para #232429)
                     }
                 }
             }
         }
     </script>
     <style>
+        /* CSS do Fundo e Cores Gerais */
         body {
+            background-color: #17181a; /* Preto quase puro para o fundo geral */
+            color: #f3f3f3; /* Texto padrão bem claro */
             font-family: 'Inter', sans-serif;
         }
+
+        /* Estilos para a seção do cabeçalho */
+        .header-section {
+            background: #101114; /* Preto puro ou preto azulado */
+            padding: 6rem 2rem 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilos para os contêineres de seção do corpo */
+        .section-container {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 2rem;
+            background-color: #232429; /* Cinza escuro elegante */
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Gradiente Dourado -> Azul para o Título (ajustado para 60% dourado, 40% azul) */
+        .gradient-text {
+            font-weight: bold;
+            background: linear-gradient(90deg, #FFD600 0%, #FFD600 60%, #0099FF 100%); /* 60% dourado, 40% azul */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Sombra para efeito "luxo" */
+        }
+
+        /* Cores para letras secundárias e textos gerais */
+        .text-light {
+            color: #f3f3f3;
+        }
+        .text-muted {
+            color: #a5a6ad;
+        }
+        /* Classe para texto branco puro */
+        .text-white-important {
+            color: #FFFFFF !important; /* Usando !important para garantir a sobreposição */
+        }
+
         /* Estilos para a tabela de planos para melhor visualização em dispositivos móveis */
         @media (max-width: 768px) {
             .table-responsive {
@@ -37,285 +83,334 @@
         }
     </style>
 </head>
-<body class="bg-light text-dark leading-relaxed">
+<body class="text-light leading-relaxed">
 
-    <header class="bg-gradient-to-r from-primary to-emerald-500 text-white py-16 px-4 sm:px-6 lg:px-8 rounded-b-3xl shadow-lg">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-                Proposta Comercial
+    <header class="header-section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl mb-0 font-black">
+                <span class="gradient-text">Proposta Comercial</span>
             </h1>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-normal mt-4 gradient-text">
                 Plataforma Veterinária com Inteligência Artificial
             </h2>
-            <p class="text-lg sm:text-xl opacity-90 mb-4">
-                Desenvolvido por <span class="font-bold">Guillen IA</span>
+            <p class="text-white-important text-base sm:text-lg mt-8 font-normal">
+                Desenvolvido por Guillen IA
             </p>
-            </div>
+        </div>
     </header>
 
     <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Transformando a Gestão Veterinária</h3>
-            <p class="text-lg mb-4">
-                No cenário dinâmico das clínicas veterinárias, sabemos o quanto a gestão eficiente, o atendimento de qualidade e a fidelização de tutores são cruciais. A correria do dia a dia muitas vezes dificulta o acompanhamento completo dos pets, a comunicação ágil e a otimização dos processos.
-            </p>
-            <p class="text-lg">
-                É pensando nesses desafios que a Guillen IA desenvolveu uma solução completa para transformar a forma como sua clínica se conecta com seus clientes e gerencia suas operações, **liberando sua equipe para focar no que realmente importa: a saúde e o bem-estar dos animais.**
-            </p>
-        </section>
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Transformando a Gestão Veterinária</h3>
+                <p class="text-light text-lg mb-4">
+                    No cenário dinâmico das clínicas veterinárias, sabemos o quanto a gestão eficiente, o atendimento de qualidade e a fidelização de tutores são cruciais. A correria do dia a dia muitas vezes dificulta o acompanhamento completo dos pets, a comunicação ágil e a otimização dos processos.
+                </p>
+                <p class="text-light text-lg">
+                    É pensando nesses desafios que a Guillen IA desenvolveu uma solução completa para transformar a forma como sua clínica se conecta com seus clientes e gerencia suas operações, **liberando sua equipe para focar no que realmente importa: a saúde e o bem-estar dos animais.**
+                </p>
+            </section>
+        </div>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">A Solução: Sistema de Gestão Veterinária Multicanal com IA</h3>
-            <p class="text-lg mb-4">
-                A solução desenvolvida pela Guillen IA é um sistema **integrado, centralizado e moderno** que conecta clínicas veterinárias, tutores de pets e toda a equipe de atendimento, oferecendo uma experiência única em três canais principais: **aplicativo mobile, site responsivo e agente de IA conversacional no WhatsApp.** Todas as informações ficam armazenadas com segurança em um banco de dados unificado (Supabase), permitindo acesso, consulta, atualização e envio de dados em tempo real, a partir de qualquer um dos canais.
-            </p>
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">A Solução: Sistema de Gestão Veterinária Multicanal com IA</h3>
+                <p class="text-light text-lg mb-4">
+                    A solução desenvolvida pela Guillen IA é um sistema **integrado, centralizado e moderno** que conecta clínicas veterinárias, tutores de pets e toda a equipe de atendimento, oferecendo uma experiência única em três canais principais: **aplicativo mobile, site responsivo e agente de IA conversacional no WhatsApp.** Todas as informações ficam armazenadas com segurança em um banco de dados unificado (Supabase), permitindo acesso, consulta, atualização e envio de dados em tempo real, a partir de qualquer um dos canais.
+                </p>
+            </section>
+        </div>
 
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Onde tudo fica armazenado e como funciona o acesso</h4>
-            <p class="text-lg mb-4">
-                No núcleo do sistema está o <span class="font-bold">Supabase</span>, um banco de dados central e seguro, onde ficam guardados:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Informações detalhadas dos animais:</span> nome, espécie, raça, data de nascimento, sexo, peso (com histórico de evolução), microchip, personalidade, observações, histórico médico completo (diagnósticos, cirurgias, consultas, eventos), vacinas (com todos os dados de fabricante, lote, validade), medicações (controle periódico), dieta (tipo, marca, quantidade, frequência).</li>
-                <li><span class="font-medium">Anexos:</span> exames, fotos de lesões, receituários, cartão de vacinas digital, laudos e atestados. Todos esses arquivos podem ser consultados, baixados ou enviados automaticamente pelo agente de IA, a pedido do tutor.</li>
-                <li><span class="font-medium">Informações dos tutores:</span> nome, telefone, e-mail, endereço, podendo vincular vários animais a um tutor e vários tutores a um animal (para famílias, sócios ou responsáveis).</li>
-                <li><span class="font-medium">Agenda e lembretes:</span> agendamentos de banhos, tosas, consultas, lembretes de vacinas e medicações, datas comemorativas (aniversário do pet, promoções) e eventos personalizados.</li>
-                <li><span class="font-medium">Dados administrativos e configurações:</span> informações da clínica, veterinários, perfis de acesso e personalização do sistema, incluindo a identidade visual.</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Personalização e Expansão de Conhecimento</h4>
-            <p class="text-lg mb-4">
-                O administrador pode editar diretamente um documento Word específico, utilizado para alimentar a memória RAG do agente. Ao salvar ou remover informações neste Word, o agente aprende ou esquece imediatamente tudo de forma prática e controlada pela própria clínica. Assim, a IA pode responder perguntas personalizadas sobre a clínica, enviar mensagens de boas-vindas exclusivas e explicar procedimentos de acordo com o protocolo de cada empresa.
-            </p>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Integrações Avançadas (expansíveis)</h4>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Google Calendar:</span> O agente pode integrar-se ao Google Agenda da clínica, agendando consultas, banhos e vacinas de forma sincronizada, inclusive enviando avisos automáticos ao tutor pouco antes do evento.</li>
-                <li><span class="font-medium">Google Tasks:</span> O administrador pode adicionar tarefas diretamente pelo WhatsApp (texto ou comando de voz), como “lembrar de enviar campanha de vacina segunda-feira”, tornando a rotina da clínica muito mais organizada.</li>
-            </ul>
-            <p class="text-lg mt-4">
-                Todas essas integrações são opcionais e podem ser expandidas conforme as necessidades da clínica evoluam.
-            </p>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Segurança e Controle</h4>
-            <p class="text-lg mb-4">
-                Toda informação é protegida com as melhores práticas de segurança digital:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li>Dados criptografados, backups automáticos, permissões individualizadas.</li>
-                <li>O tutor só acessa informações dos seus animais; o veterinário/admin tem visão global.</li>
-                <li>Relatórios de acessos, movimentação de dados, histórico vitalício e possibilidade de auditoria.</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Monetização para a Clínica</h4>
-            <p class="text-lg mb-4">
-                A plataforma permite criar clubes de assinatura premium, como “Clube do Pet”, dando acesso exclusivo a lembretes personalizados, atendimento instantâneo 24h pelo WhatsApp, documentos digitais, novidades e promoções. A cobrança é mensal, criando uma nova fonte de receita para a clínica e aumentando o valor percebido do atendimento.
-            </p>
-
-            <h4 class="text-xl font-semibold text-secondary mb-3 mt-6">Diferenciais Estratégicos</h4>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li>Atendimento multicanal (WhatsApp, App, Site), sem perda de informação ou atraso.</li>
-                <li>Personalização completa da comunicação, identidade visual e funcionalidades.</li>
-                <li>Pronto para ser expandido com outras integrações e módulos sob medida.</li>
-                <li>Facilita o engajamento do tutor e a organização da clínica.</li>
-                <li>Destaca a clínica como referência em inovação e atendimento inteligente.</li>
-            </ul>
-
-            <h4 class="text-xl font-semibold text-primary mb-3 mt-8 text-center">Em Resumo:</h4>
-            <p class="text-lg text-center font-medium">
-                O sistema Guillen IA transforma o relacionamento veterinário-tutor em todos os níveis, centralizando dados, automatizando atendimento, organizando a rotina e aumentando a receita do negócio — com tecnologia de ponta, comunicação humanizada e a marca da clínica em cada detalhe.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Identidade Visual e Personalização</h3>
-            <p class="text-lg mb-4">
-                O sistema é totalmente personalizado com o **nome, logotipo e cores da sua clínica**, garantindo uma experiência coesa e profissional para seus clientes.
-            </p>
-            <p class="text-lg">
-                Desenvolvido pela Guillen IA, a identidade visual é adaptada conforme o perfil único do seu negócio, reforçando sua marca no mercado.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">O que é o Setup?</h3>
-            <p class="text-lg mb-4">
-                O setup é o **investimento inicial** que cobre o desenvolvimento, implantação e personalização completa do sistema para sua clínica, incluindo:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Códigos-fonte:</span> Do aplicativo mobile, sistema web e agente de IA.</li>
-                <li><span class="font-medium">Infraestrutura:</span> VPS, banco de dados, domínio, API, configuração de serviços e integrações.</li>
-                <li><span class="font-medium">Conhecimento e Customização:</span> Todo o conhecimento, criatividade e customização aplicados ao seu projeto.</li>
-                <li><span class="font-medium">Segurança, Arquitetura e Documentação:</span> Segurança, arquitetura, otimização de performance e documentação técnica.</li>
-            </ul>
-            <p class="text-lg mt-4">
-                Ao quitar o setup (planos que oferecem essa opção), a propriedade intelectual e técnica do sistema passa a ser sua. Assim, você pode evoluir, migrar ou contratar manutenção de quem quiser total independência.
-            </p>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Para que serve a Mensalidade?</h3>
-            <p class="text-lg mb-4">
-                A mensalidade cobre:
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><span class="font-medium">Suporte Técnico:</span> E atendimento contínuo.</li>
-                <li><span class="font-medium">Custo de IA:</span> Tokens e processamento de IA.</li>
-                <li><span class="font-medium">Hospedagem:</span> Em VPS e banco de dados seguro.</li>
-                <li><span class="font-medium">Atualizações e Manutenção:</span> Preventiva e corretiva.</li>
-                <li><span class="font-medium">Monitoramento e Backup:</span> De performance e backup de dados.</li>
-            </ul>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Canais de Atendimento Multicanal</h3>
-            <div class="space-y-6">
-                <div class="p-6 bg-blue-50 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-blue-200 pb-8">
-                    <svg class="w-16 h-16 text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">Aplicativo Mobile</h4>
-                    <p class="text-dark">
-                        No app, tutores e profissionais visualizam o histórico completo dos pets, com acesso fácil a dados médicos, vacinas, peso, anexos e agendamentos. O app é um canal prático para consulta e gestão das informações do pet, de forma segura e personalizada. Tutores não podem editar dados, apenas consultar; o veterinário e a equipe têm controle completo.
-                    </p>
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Canais de Atendimento Multicanal</h3>
+                <div class="space-y-6">
+                    <div class="p-6 bg-blue-50 bg-opacity-10 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-blue-800 pb-8">
+                        <svg class="w-16 h-16 text-secondary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        <h4 class="text-xl font-semibold text-light mb-2">Aplicativo Mobile</h4>
+                        <p class="text-muted">
+                            No app, tutores e profissionais visualizam o histórico completo dos pets, com acesso fácil a dados médicos, vacinas, peso, anexos e agendamentos. O app é um canal prático para consulta e gestão das informações do pet, de forma segura e personalizada. Tutores não podem editar dados, apenas consultar; o veterinário e a equipe têm controle completo.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-green-50 bg-opacity-10 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-green-800 pb-8">
+                        <svg class="w-16 h-16 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 21L14.75 21L15.25 17M12 3C10.3431 3 9 4.34315 9 6V15C9 16.6569 10.3431 18 12 18C13.6569 18 15 16.6569 15 15V6C15 4.34315 13.6569 3 12 3Z"></path>
+                        </svg>
+                        <h4 class="text-xl font-semibold text-light mb-2">Site Responsivo</h4>
+                        <p class="text-muted">
+                            No portal web, todas as informações ficam disponíveis de forma organizada e segura, com login individual, fácil acesso a fichas, anexos, histórico médico e agenda. Tutores podem acompanhar tudo do computador, compartilhar informações com familiares e acessar relatórios detalhados, sem instalar nada. É também pelo site que administradores podem gerenciar a base de dados, atualizar informações e monitorar o engajamento dos clientes.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-purple-50 bg-opacity-10 rounded-lg shadow-inner flex flex-col items-center text-center">
+                        <svg class="w-16 h-16 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                        <h4 class="text-xl font-semibold text-light mb-2">WhatsApp com Agente de IA</h4>
+                        <p class="text-muted">
+                            O grande diferencial é o agente de IA no WhatsApp, que conversa de forma humanizada e personalizada, conforme a identidade da clínica. O veterinário pode definir o perfil, o nome e o estilo de resposta seja mais técnico, descontraído, carinhoso ou focado em negócios. O tutor envia perguntas como “Qual o próximo banho do Thor?”, “Preciso do laudo da última consulta” ou “Como foi o comportamento do Simba na última tosa?” e o agente de IA responde em segundos, consultando o banco de dados central. Se pedir um documento ou exame, a IA busca e envia automaticamente pelo próprio WhatsApp. O canal também serve para envio automático de lembretes de vacina, banho, consultas e promoções, de acordo com o que está registrado na agenda central do sistema.
+                        </p>
+                    </div>
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-inner flex flex-col items-center text-center border-b-2 border-green-200 pb-8">
-                    <svg class="w-16 h-16 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.25 21L14.75 21L15.25 17M12 3C10.3431 3 9 4.34315 9 6V15C9 16.6569 10.3431 18 12 18C13.6569 18 15 16.6569 15 15V6C15 4.34315 13.6569 3 12 3Z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">Site Responsivo</h4>
-                    <p class="text-dark">
-                        No portal web, todas as informações ficam disponíveis de forma organizada e segura, com login individual, fácil acesso a fichas, anexos, histórico médico e agenda. Tutores podem acompanhar tudo do computador, compartilhar informações com familiares e acessar relatórios detalhados, sem instalar nada. É também pelo site que administradores podem gerenciar a base de dados, atualizar informações e monitorar o engajamento dos clientes.
-                    </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Onde tudo fica armazenado e como funciona o acesso</h3>
+                <p class="text-light text-lg mb-4">
+                    No núcleo do sistema está o <span class="font-bold">Supabase</span>, um banco de dados central e seguro, onde ficam guardados:
+                </p>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li><span class="font-medium text-light">Informações detalhadas dos animais:</span> nome, espécie, raça, data de nascimento, sexo, peso (com histórico de evolução), microchip, personalidade, observações, histórico médico completo (diagnósticos, cirurgias, consultas, eventos), vacinas (com todos os dados de fabricante, lote, validade), medicações (controle periódico), dieta (tipo, marca, quantidade, frequência).</li>
+                    <li><span class="font-medium text-light">Anexos:</span> exames, fotos de lesões, receituários, cartão de vacinas digital, laudos e atestados. Todos esses arquivos podem ser consultados, baixados ou enviados automaticamente pelo agente de IA, a pedido do tutor.</li>
+                    <li><span class="font-medium text-light">Informações dos tutores:</span> nome, telefone, e-mail, endereço, podendo vincular vários animais a um tutor e vários tutores a um animal (para famílias, sócios ou responsáveis).</li>
+                    <li><span class="font-medium text-light">Agenda e lembretes:</span> agendamentos de banhos, tosas, consultas, lembretes de vacinas e medicações, datas comemorativas (aniversário do pet, promoções) e eventos personalizados.</li>
+                    <li><span class="font-medium text-light">Dados administrativos e configurações:</span> informações da clínica, veterinários, perfis de acesso e personalização do sistema, incluindo a identidade visual.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Personalização e Expansão de Conhecimento</h3>
+                <p class="text-light text-lg mb-4">
+                    O administrador pode editar diretamente um documento Word específico, utilizado para alimentar a memória RAG do agente. Ao salvar ou remover informações neste Word, o agente aprende ou esquece imediatamente tudo de forma prática e controlada pela própria clínica. Assim, a IA pode responder perguntas personalizadas sobre a clínica, enviar mensagens de boas-vindas exclusivas e explicar procedimentos de acordo com o protocolo de cada empresa.
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Integrações Avançadas (expansíveis)</h3>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li><span class="font-medium text-light">Google Calendar:</span> O agente pode integrar-se ao Google Agenda da clínica, agendando consultas, banhos e vacinas de forma sincronizada, inclusive enviando avisos automáticos ao tutor pouco antes do evento.</li>
+                    <li><span class="font-medium text-light">Google Tasks:</span> O administrador pode adicionar tarefas diretamente pelo WhatsApp (texto ou comando de voz), como “lembrar de enviar campanha de vacina segunda-feira”, tornando a rotina da clínica muito mais organizada.</li>
+                </ul>
+                <p class="text-light text-lg mt-4">
+                    Todas essas integrações são opcionais e podem ser expandidas conforme as necessidades da clínica evoluam.
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Segurança e Controle</h3>
+                <p class="text-light text-lg mb-4">
+                    Toda informação é protegida com as melhores práticas de segurança digital:
+                </p>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li>Dados criptografados, backups automáticos, permissões individualizadas.</li>
+                    <li>O tutor só acessa informações dos seus animais; o veterinário/admin tem visão global.</li>
+                    <li>Relatórios de acessos, movimentação de dados, histórico vitalício e possibilidade de auditoria.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Monetização para a Clínica</h3>
+                <p class="text-light text-lg mb-4">
+                    A plataforma permite criar clubes de assinatura premium, como “Clube do Pet”, dando acesso exclusivo a lembretes personalizados, atendimento instantâneo 24h pelo WhatsApp, documentos digitais, novidades e promoções. A cobrança é mensal, criando uma nova fonte de receita para a clínica e aumentando o valor percebido do atendimento.
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Diferenciais Estratégicos</h3>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li>Atendimento multicanal (WhatsApp, App, Site), sem perda de informação ou atraso.</li>
+                    <li>Personalização completa da comunicação, identidade visual e funcionalidades.</li>
+                    <li>Pronto para ser expandido com outras integrações e módulos sob medida.</li>
+                    <li>Facilita o engajamento do tutor e a organização da clínica.</li>
+                    <li>Destaca a clínica como referência em inovação e atendimento inteligente.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Identidade Visual e Personalização</h3>
+                <p class="text-light text-lg mb-4">
+                    O sistema é totalmente personalizado com o **nome, logotipo e cores da sua clínica**, garantindo uma experiência coesa e profissional para seus clientes.
+                </p>
+                <p class="text-light text-lg">
+                    Desenvolvido pela Guillen IA, a identidade visual é adaptada conforme o perfil único do seu negócio, reforçando sua marca no mercado.
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">O que é o Setup?</h3>
+                <p class="text-light text-lg mb-4">
+                    O setup é o **investimento inicial** que cobre o desenvolvimento, implantação e personalização completa do sistema para sua clínica, incluindo:
+                </p>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li><span class="font-medium text-light">Códigos-fonte:</span> Do aplicativo mobile, sistema web e agente de IA.</li>
+                    <li><span class="font-medium text-light">Infraestrutura:</span> VPS, banco de dados, domínio, API, configuração de serviços e integrações.</li>
+                    <li><span class="font-medium text-light">Conhecimento e Customização:</span> Todo o conhecimento, criatividade e customização aplicados ao seu projeto.</li>
+                    <li><span class="font-medium text-light">Segurança, Arquitetura e Documentação:</span> Segurança, arquitetura, otimização de performance e documentação técnica.</li>
+                </ul>
+                <p class="text-light text-lg mt-4">
+                    Ao quitar o setup (planos que oferecem essa opção), a propriedade intelectual e técnica do sistema passa a ser sua. Assim, você pode evoluir, migrar ou contratar manutenção de quem quiser total independência.
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Para que serve a Mensalidade?</h3>
+                <p class="text-light text-lg mb-4">
+                    A mensalidade cobre:
+                </p>
+                <ul class="list-disc list-inside text-lg space-y-2 ml-4 text-muted">
+                    <li><span class="font-medium text-light">Suporte Técnico:</span> E atendimento contínuo.</li>
+                    <li><span class="font-medium text-light">Custo de IA:</span> Tokens e processamento de IA.</li>
+                    <li><span class="font-medium text-light">Hospedagem:</span> Em VPS e banco de dados seguro.</li>
+                    <li><span class="font-medium text-light">Atualizações e Manutenção:</span> Preventiva e corretiva.</li>
+                    <li><span class="font-medium text-light">Monitoramento e Backup:</span> De performance e backup de dados.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Compromisso Mínimo</h3>
+                <p class="text-light text-lg mb-4">
+                    O compromisso mínimo é o tempo de permanência inicial exigido para garantir equilíbrio entre investimento e entrega de valor.
+                </p>
+                <p class="text-light text-lg">
+                    Após esse prazo, o cancelamento é livre, com aviso prévio, sem multas ou surpresas (exceto nos casos de setup parcelado).
+                </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-6 text-center">Planos Comerciais Guillen IA</h3>
+                <div class="table-responsive">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100 bg-opacity-10 border-b border-gray-700">
+                                <th class="py-3 px-4 text-lg font-semibold text-light rounded-tl-lg">Plano</th>
+                                <th class="py-3 px-4 text-lg font-semibold text-light">Setup (Investimento Inicial)</th>
+                                <th class="py-3 px-4 text-lg font-semibold text-light">Mensalidade</th>
+                                <th class="py-3 px-4 text-lg font-semibold text-light">Compromisso Mínimo</th>
+                                <th class="py-3 px-4 text-lg font-semibold text-light rounded-tr-lg">O que recebe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-800 hover:bg-gray-700 hover:bg-opacity-20">
+                                <td class="py-3 px-4 font-medium text-light text-lg">Liberdade Total</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 6.500,00 (ou 12x de R$ 600,00)</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 350,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">Nenhum</td>
+                                <td class="py-3 px-4 text-muted text-lg">Código-fonte, IA, banco de dados e integrações próprios após quitação</td>
+                            </tr>
+                            <tr class="border-b border-gray-800 hover:bg-gray-700 hover:bg-opacity-20">
+                                <td class="py-3 px-4 font-medium text-light text-lg">All-Inclusive</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 0,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 700,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">6 meses</td>
+                                <td class="py-3 px-4 text-muted text-lg">Licença de uso total. Suporte, implantação e atualizações. Sem código-fonte</td>
+                            </tr>
+                            <tr class="border-b border-gray-800 hover:bg-gray-700 hover:bg-opacity-20">
+                                <td class="py-3 px-4 font-medium text-light text-lg">Invest. Antecipado</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 10.000,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 0,00 (1º ano)</td>
+                                <td class="py-3 px-4 text-muted text-lg">12 meses</td>
+                                <td class="py-3 px-4 text-muted text-lg">Código-fonte, estrutura e documentação já na implantação</td>
+                            </tr>
+                            <tr class="border-b border-gray-800 hover:bg-gray-700 hover:bg-opacity-20">
+                                <td class="py-3 px-4 font-medium text-light text-lg">Lite Start</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 2.500,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 250,00</td>
+                                <td class="py-3 px-4 text-lg">4 meses</td>
+                                <td class="py-3 px-4 text-muted text-lg">Código-fonte do agente de IA WhatsApp, pronto para uso e customização</td>
+                            </tr>
+                            <tr class="hover:bg-gray-700 hover:bg-opacity-20">
+                                <td class="py-3 px-4 font-medium text-light text-lg rounded-bl-lg">IA Express</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 0,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">R$ 420,00</td>
+                                <td class="py-3 px-4 text-muted text-lg">4 meses</td>
+                                <td class="py-3 px-4 text-muted text-lg rounded-br-lg">Apenas licença de uso do agente IA WhatsApp. Sem código-fonte</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="p-6 bg-purple-50 rounded-lg shadow-inner flex flex-col items-center text-center">
-                    <svg class="w-16 h-16 text-purple-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                    </svg>
-                    <h4 class="text-xl font-semibold mb-2">WhatsApp com Agente de IA</h4>
-                    <p class="text-dark">
-                        O grande diferencial é o agente de IA no WhatsApp, que conversa de forma humanizada e personalizada, conforme a identidade da clínica. O veterinário pode definir o perfil, o nome e o estilo de resposta seja mais técnico, descontraído, carinhoso ou focado em negócios. O tutor envia perguntas como “Qual o próximo banho do Thor?”, “Preciso do laudo da última consulta” ou “Como foi o comportamento do Simba na última tosa?” e o agente de IA responde em segundos, consultando o banco de dados central. Se pedir um documento ou exame, a IA busca e envia automaticamente pelo próprio WhatsApp. O canal também serve para envio automático de lembretes de vacina, banho, consultas e promoções, de acordo com o que está registrado na agenda central do sistema.
-                    </p>
+            </section>
+        </div>
+
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Detalhamento dos Planos</h3>
+
+                <div class="mb-6 pb-4 border-b border-gray-700">
+                    <h4 class="text-xl font-semibold text-secondary mb-2">Liberdade Total</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1 ml-4 text-muted">
+                        <li><span class="font-medium text-light">Código-fonte, IA, banco de dados e integrações próprios após quitação do setup</span></li>
+                        <li><span class="font-medium text-light">Mensalidade cobre suporte, manutenção e hospedagem</span></li>
+                        <li><span class="font-medium text-light">Parcelamento em até 12x disponível</span></li>
+                        <li><span class="font-medium text-light">Se cancelar antes de quitar o setup parcelado, paga o saldo do setup no ato do cancelamento</span></li>
+                        <li><span class="font-medium text-light">Simulação:</span> Parcelando em 12x, paga R$ 600,00 (parcela do setup) + R$ 350,00 (mensalidade) = <span class="font-bold text-light">R$ 950,00/mês no 1º ano</span>. Depois, apenas R$ 350,00/mês.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-6 text-center">Planos Comerciais Guillen IA</h3>
-            <div class="table-responsive">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-100 border-b border-gray-200">
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700 rounded-tl-lg">Plano</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Setup (Investimento Inicial)</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Mensalidade</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700">Compromisso Mínimo</th>
-                            <th class="py-3 px-4 text-lg font-semibold text-gray-700 rounded-tr-lg">O que recebe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Liberdade Total</td>
-                            <td class="py-3 px-4 text-lg">R$ 6.500 (ou 12x de R$ 600)</td>
-                            <td class="py-3 px-4 text-lg">R$ 350</td>
-                            <td class="py-3 px-4 text-lg">Nenhum</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte, IA, banco de dados e integrações próprios após quitação</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">All-Inclusive</td>
-                            <td class="py-3 px-4 text-lg">Zero</td>
-                            <td class="py-3 px-4 text-lg">R$ 700</td>
-                            <td class="py-3 px-4 text-lg">6 meses</td>
-                            <td class="py-3 px-4 text-lg">Licença de uso total. Suporte, implantação e atualizações. Sem código-fonte</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Invest. Antecipado</td>
-                            <td class="py-3 px-4 text-lg">R$ 10.000</td>
-                            <td class="py-3 px-4 text-lg">Zero (1º ano)</td>
-                            <td class="py-3 px-4 text-lg">12 meses</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte, estrutura e documentação já na implantação</td>
-                        </tr>
-                        <tr class="border-b border-gray-200 hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg">Lite Start</td>
-                            <td class="py-3 px-4 text-lg">R$ 2.500</td>
-                            <td class="py-3 px-4 text-lg">R$ 250</td>
-                            <td class="py-3 px-4 text-lg">4 meses</td>
-                            <td class="py-3 px-4 text-lg">Código-fonte do agente de IA WhatsApp, pronto para uso e customização</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="py-3 px-4 font-medium text-lg rounded-bl-lg">IA Express</td>
-                            <td class="py-3 px-4 text-lg">Zero</td>
-                            <td class="py-3 px-4 text-lg">R$ 420</td>
-                            <td class="py-3 px-4 text-lg">4 meses</td>
-                            <td class="py-3 px-4 text-lg rounded-br-lg">Apenas licença de uso do agente IA WhatsApp. Sem código-fonte</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+                <div class="mb-6 pb-4 border-b border-gray-700">
+                    <h4 class="text-xl font-semibold text-secondary mb-2">All-Inclusive Premium</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1 ml-4 text-muted">
+                        <li><span class="font-medium text-light">Licença de uso, implantação, personalização, suporte e infraestrutura inclusos</span></li>
+                        <li><span class="font-medium text-light">Não entrega código-fonte</span></li>
+                        <li><span class="font-medium text-light">Compromisso mínimo de 6 meses</span></li>
+                        <li><span class="font-medium text-light">Cancelando antes, paga as mensalidades restantes até o compromisso mínimo</span></li>
+                    </ul>
+                </div>
 
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Detalhamento dos Planos</h3>
+                <div class="mb-6 pb-4 border-b border-gray-700">
+                    <h4 class="text-xl font-semibold text-secondary mb-2">Investimento Antecipado</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1 ml-4 text-muted">
+                        <li><span class="font-medium text-light">Pagamento único</span></li>
+                        <li><span class="font-medium text-light">Código-fonte, estrutura e documentação entregues assim que o sistema está rodando</span></li>
+                        <li><span class="font-medium text-light">Após o 1º ano, pode manter só manutenção/hospedagem</span></li>
+                    </ul>
+                </div>
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Liberdade Total</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Código-fonte, IA, banco de dados e integrações próprios após quitação do setup</li>
-                    <li>Mensalidade cobre suporte, manutenção e hospedagem</li>
-                    <li>Parcelamento em até 12x disponível</li>
-                    <li>Se cancelar antes de quitar o setup parcelado, paga o saldo do setup no ato do cancelamento</li>
-                    <li><span class="font-medium">Simulação:</span> Parcelando em 12x, paga R$ 600 (parcela do setup) + R$ 350 (mensalidade) = <span class="font-bold">R$ 950/mês no 1º ano</span>. Depois, apenas R$ 350/mês.</li>
-                </ul>
-            </div>
+                <div class="mb-6 pb-4 border-b border-gray-700">
+                    <h4 class="text-xl font-semibold text-secondary mb-2">Lite Start</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1 ml-4 text-muted">
+                        <li><span class="font-medium text-light">Código-fonte do agente de IA no WhatsApp incluso</span></li>
+                        <li><span class="font-medium text-light">Sem site, app ou integrações avançadas</span></li>
+                        <li><span class="font-medium text-light">Pode migrar para outro plano aproveitando parte do investimento já feito</span></li>
+                        <li><span class="font-medium text-light">Compromisso mínimo de 4 meses</span></li>
+                    </ul>
+                </div>
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">All-Inclusive Premium</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Licença de uso, implantação, personalização, suporte e infraestrutura inclusos</li>
-                    <li>Não entrega código-fonte</li>
-                    <li>Compromisso mínimo de 6 meses</li>
-                    <li>Cancelando antes, paga as mensalidades restantes até o compromisso mínimo</li>
-                </ul>
-            </div>
+                <div class="mb-6">
+                    <h4 class="text-xl font-semibold text-secondary mb-2">IA Express</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1 ml-4 text-muted">
+                        <li><span class="font-medium text-light">Apenas licença de uso do agente de IA no WhatsApp</span></li>
+                        <li><span class="font-medium text-light">Sem site, app, integrações, personalização ou entrega de código-fonte</span></li>
+                        <li><span class="font-medium text-light">Compromisso mínimo de 4 meses</span></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
 
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Investimento Antecipado</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Pagamento único</li>
-                    <li>Código-fonte, estrutura e documentação entregues assim que o sistema está rodando</li>
-                    <li>Após o 1º ano, pode manter só manutenção/hospedagem</li>
-                </ul>
-            </div>
-
-            <div class="mb-6 pb-4 border-b border-gray-200">
-                <h4 class="text-xl font-semibold text-secondary mb-2">Lite Start</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Código-fonte do agente de IA no WhatsApp incluso</li>
-                    <li>Sem site, app ou integrações avançadas</li>
-                    <li>Pode migrar para outro plano aproveitando parte do investimento já feito</li>
-                    <li>Compromisso mínimo de 4 meses</li>
-                </ul>
-            </div>
-
-            <div class="mb-6">
-                <h4 class="text-xl font-semibold text-secondary mb-2">IA Express</h4>
-                <ul class="list-disc list-inside text-lg space-y-1 ml-4">
-                    <li>Apenas licença de uso do agente de IA no WhatsApp</li>
-                    <li>Sem site, app, integrações, personalização ou entrega de código-fonte</li>
-                    <li>Compromisso mínimo de 4 meses</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="mb-12 p-6 bg-white rounded-xl shadow-md">
-            <h3 class="text-2xl font-semibold text-primary mb-4">Compromisso Mínimo</h3>
-            <p class="text-lg mb-4">
-                O compromisso mínimo é o tempo de permanência inicial exigido para garantir equilíbrio entre investimento e entrega de valor.
-            </p>
-            <p class="text-lg">
-                Após esse prazo, o cancelamento é livre, com aviso prévio, sem multas ou surpresas (exceto nos casos de setup parcelado).
-            </p>
-        </section>
+        <div class="section-container">
+            <section class="p-0">
+                <h3 class="text-2xl font-semibold text-primary mb-4">Compromisso Mínimo</h3>
+                <p class="text-light text-lg mb-4">
+                    O compromisso mínimo é o tempo de permanência inicial exigido para garantir equilíbrio entre investimento e entrega de valor.
+                </p>
+                <p class="text-light text-lg">
+                    Após esse prazo, o cancelamento é livre, com aviso prévio, sem multas ou surpresas (exceto nos casos de setup parcelado).
+                </p>
+            </section>
+        </div>
 
     </main>
 
